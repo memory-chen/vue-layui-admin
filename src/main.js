@@ -3,6 +3,9 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
+require('layui-src/dist/css/layui.css')
+// require('jquery/dist/jquery.min.js')
+require('layui-src/dist/layui.js')
 
 Vue.config.productionTip = false
 
@@ -11,5 +14,7 @@ new Vue({
   el: '#app',
   router,
   template: '<App/>',
-  components: { App }
+  components: {
+    App
+  }
 })
