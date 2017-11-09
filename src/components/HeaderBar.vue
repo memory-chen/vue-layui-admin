@@ -12,29 +12,6 @@
           </li>
           <li class="layui-nav-item">
             <div class="layui-form component">
-              <!-- <select name="modules" lay-verify="required" lay-search="">
-      						<option value="">直接选择或搜索选择</option>
-      						<option value="1">layer</option>
-      						<option value="2">form</option>
-      						<option value="3">layim</option>
-      						<option value="4">element</option>
-      						<option value="5">laytpl</option>
-      						<option value="6">upload</option>
-      						<option value="7">laydate</option>
-      						<option value="8">laypage</option>
-      						<option value="9">flow</option>
-      						<option value="10">util</option>
-      						<option value="11">code</option>
-      						<option value="12">tree</option>
-      						<option value="13">layedit</option>
-      						<option value="14">nav</option>
-      						<option value="15">tab</option>
-      						<option value="16">table</option>
-      						<option value="17">select</option>
-      						<option value="18">checkbox</option>
-      						<option value="19">switch</option>
-      						<option value="20">radio</option>
-                </select> -->
               <div class="layui-unselect layui-form-select">
                 <div class="layui-select-title">
                   <input type="text" placeholder="直接选择或搜索选择" value="" class="layui-input layui-unselect">
@@ -76,8 +53,9 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-.component .layui-form-select .layui-edge, .top_menu .layui-nav-item[mobile] {
-    display: none;
+.component .layui-form-select .layui-edge,
+.top_menu .layui-nav-item[mobile] {
+  display: none;
 }
 .component .layui-icon {
   position: absolute;
