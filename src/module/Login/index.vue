@@ -21,7 +21,7 @@
 				<div class="code"><img src="./images/code.jpg" width="116" height="36"></div>
 		    </div>
 			<button class="layui-btn login_btn" lay-submit="" lay-filter="login">登录</button>
-            没有账号？点击<a class="layui-bg-red" href="">注册</a>
+            没有账号？点击<a class="layui-tx-red" href="">注册</a>
             
 		</form>
 	</div>
@@ -84,5 +84,8 @@ body {
 }
 .login_btn {
   width: 100%;
+}
+.layui-tx-red{
+  color:#fff;
 }
 </style>
