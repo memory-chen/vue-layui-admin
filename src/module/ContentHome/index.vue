@@ -1,18 +1,15 @@
 <template>
-  <div id="contentHome " class="layui-body">
-    <nav-list-bar></nav-list-bar>
+  <div id="contentHome">
     <goto-page-btn></goto-page-btn>
   </div>
 </template>
 
 <script>
-import NavListBar from '@/module/NavListBar'
-import GotoPageBtn from "@/components/GotoPageBtn.vue"
+import GotoPageBtn from '@/components/GotoPageBtn.vue'
 export default {
-components:{
-  NavListBar,
-  GotoPageBtn
-}
+  components:{
+    GotoPageBtn
+  }
 }
 </script>
 

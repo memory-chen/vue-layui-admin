@@ -7,11 +7,6 @@ Vue.use(Router)
 
 export default new Router({
   routes: [
-    // {
-    //   path: '/',
-    //   name: 'ContentHome',
-    //   component: HeaderBar
-    // },
     {
       path: '/',
       name: 'ContentHome',
