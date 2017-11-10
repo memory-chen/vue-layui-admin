@@ -15,22 +15,12 @@
                 <cite>系统公告<span class="layui-badge">9</span></cite>
               </a>
             </li>
-            <li class="layui-nav-item" mobile>
-              <a href="javascript:;" class="mobileAddTab" data-url="page/user/changePwd.html">
-                <i class="iconfont icon-shezhi1" data-icon="icon-shezhi1"></i>
-                <cite>设置</cite>
-              </a>
-            </li>
-            <li class="layui-nav-item" mobile>
-              <a href="page/login/login.html" class="signOut">
-                <i class="iconfont icon-loginout"></i> 退出</a>
-            </li>
             <li class="layui-nav-item" pc>
-              <a href="javascript:;">
+              <a @click="showMenu">
                 <img src="http://t.cn/RCzsdCq" class="layui-circle" width="35" height="35">
                 <cite>admin</cite>
               </a>
-              <dl class="layui-nav-child">
+              <dl class="layui-nav-child" v-show="showPersonMenu">
                 <dd>
                   <a href="javascript:;" data-url="page/user/userInfo.html">
                     <i class="iconfont icon-zhanghu" data-icon="icon-zhanghu"></i>
@@ -41,12 +31,6 @@
                   <a href="javascript:;" data-url="page/user/changePwd.html">
                     <i class="iconfont icon-shezhi1" data-icon="icon-shezhi1"></i>
                     <cite>修改密码</cite>
-                  </a>
-                </dd>
-                <dd>
-                  <a href="javascript:;" class="changeSkin">
-                    <i class="iconfont icon-huanfu"></i>
-                    <cite>更换皮肤</cite>
                   </a>
                 </dd>
                 <dd>
@@ -68,10 +52,17 @@
 export default {
   data() {
     return {
-      msg: "测试2"
+      // 控制显示个人资料的菜单
+      showPersonMenu:false
     };
   },
-  components: {}
+  components: {},
+  methods:{
+    // 控制个人菜单显隐的方法
+    showMenu() {
+      this.showPersonMenu = !this.showPersonMenu;
+    }
+  }
 };
 </script>
 
@@ -114,7 +105,7 @@ export default {
 .top_menu.layui-nav .layui-nav-child a:hover,.closeBox.layui-nav .layui-nav-child a:hover{ color:#fff; background-color:#5FB878; }
 .top_menu .iconfont{ font-size: 14px !important; }
 .top_menu .layui-nav-bar{ top:60px !important; background-color:rgba(0,0,0,0.7) }
-
+.layui-nav-child{display: block}
 /*左侧用户头像*/
 .layui-nav{ background-color:inherit !important; }
 .layui-layout-admin .layui-side{ left:0; }
@@ -132,5 +123,4 @@ export default {
 /*右侧body*/
 #top_tabs_box{ padding-right:138px; height:40px; border-bottom:1px solid #e2e2e2; }
 #top_tabs{ position: absolute; border-bottom:none;}
-
 </style>

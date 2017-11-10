@@ -10,8 +10,10 @@
 </template>
 
 <script>
+// 左边侧边栏的内容组件
 import SideBar  from '@/module/SideBar'
-import ContentShow  from '@/module/ContentShow'
+// 右边的内容组件
+import ContentShow from '@/module/ContentShow'
 export default {
   components:{
     SideBar,
