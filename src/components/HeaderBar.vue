@@ -1,5 +1,5 @@
 <template>
-  <div class="headerbar">
+  <div class="headerbar layui-header">
     <div class="layui-layout layui-layout-admin">
       <!-- 顶部 -->
       <div class="layui-header header">

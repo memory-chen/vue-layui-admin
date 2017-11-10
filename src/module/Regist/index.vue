@@ -88,7 +88,7 @@ body {
 .login_btn {
   width: 100%;
 }
-.layui-tx-red{
-  color:#fff;
+.layui-tx-red {
+  color: #fff;
 }
 </style>
