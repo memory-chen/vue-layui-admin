@@ -1,5 +1,5 @@
 <template>
-  <div class="headerbar">
+  <div class="headerbar layui-header">
     <div class="layui-layout layui-layout-admin">
       <div class="layui-header">
         <div class="layui-logo">后台管理</div>
