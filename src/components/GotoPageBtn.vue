@@ -20,9 +20,14 @@
 export default {
   data(){
     return{
-      gotoData:{//多按钮抽离出的数据及图片
+      gotoData:[//多按钮抽离出的数据及图片
+        {
+          
+        }
+      ]
+        
 
-      }
+      
     }
   }
 }
