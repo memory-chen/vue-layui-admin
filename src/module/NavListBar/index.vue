@@ -1,12 +1,14 @@
 <template>
   <div id="navListbar">
-    navListbar
+    
   </div>
 </template>
 
 <script>
 export default {
-
+  data() {
+    
+  }
 }
 </script>
 
