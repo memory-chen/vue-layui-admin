@@ -1,17 +1,17 @@
 <template>
   <div class="contentShow layui-body">
     <nav-list-bar></nav-list-bar>
-    <Content></Content>
+    <content-data></content-data>
   </div>
 </template>
 
 <script>
 import NavListBar from '@/module/NavListBar/'
-import Content from '@/module/Content/'
+import ContentData from '@/module/Content/'
 export default {
   components:{
     NavListBar,
-    Content
+    ContentData
   }
 }
 </script>

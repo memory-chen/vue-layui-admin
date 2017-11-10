@@ -5,9 +5,8 @@
       <side-bar></side-bar>
       <content-show></content-show>
     </div>
-    
   </div>
-</template>
+</template> 
 
 <script>
 // 左边侧边栏的内容组件
