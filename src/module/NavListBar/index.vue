@@ -14,5 +14,12 @@ export default {};
 </script>
 
 <style scoped>
-
+#navListbar {
+  top: 60px;
+  bottom: 44px;
+  position: fixed;
+  left: 200px;
+  width: 100%;
+  height: 50px;
+}
 </style>

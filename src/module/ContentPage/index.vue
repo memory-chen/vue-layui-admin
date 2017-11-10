@@ -4,25 +4,8 @@
       <side-bar></side-bar>
       <content-show></content-show>
     </div>
-    <!-- 左侧导航 -->
-		<div class="layui-side layui-bg-black">
-			<div class="user-photo">
-				<a class="img" title="我的头像" ><img src="http://t.cn/RCzsdCq"></a>
-				<p>你好！<span class="userName">请叫我马哥</span>, 欢迎登录</p>
-			</div>
-			<div class="navBar layui-side-scroll">
-        <ul class="layui-nav layui-nav-tree">
-            <router-link to="./" class="layui-nav-item"><a href="javascript:;" >
-              <i class="layui-icon icon-home">&#xe68e;</i><cite>后台首页</cite></a>
-              </router-link>
-            <router-link to="" class="layui-nav-item">
-              <a href="javascript:;" ><i class="layui-icon icon-text">&#xe60a;</i><cite>文章列表</cite></a>
-            </router-link>
-          </ul>
-      </div>
-		</div>
   </div>
-</template>
+</template> 
 
 <script>
 // 左边侧边栏的内容组件

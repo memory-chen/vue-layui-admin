@@ -1,24 +1,41 @@
 <template>
   <div id="contentHome " class="layui-body">
-    <nav-list-bar></nav-list-bar>
-    <goto-page-btn></goto-page-btn>
+    <div class="layui-row layui-col-space20">
+      <div class="layui-col-xs12 layui-col-sm4 layui-col-md2">
+        <goto-page-btn></goto-page-btn>
+      </div>
+      <div class="layui-col-xs12 layui-col-sm4 layui-col-md2">
+        <goto-page-btn></goto-page-btn>
+      </div>
+      <div class="layui-col-xs12 layui-col-sm4 layui-col-md2">
+        <goto-page-btn></goto-page-btn>
+      </div>
+      <div class="layui-col-xs12 layui-col-sm4 layui-col-md2">
+        <goto-page-btn></goto-page-btn>
+      </div>
+      <div class="layui-col-xs12 layui-col-sm4 layui-col-md2">
+        <goto-page-btn></goto-page-btn>
+      </div>
+      <div class="layui-col-xs12 layui-col-sm4 layui-col-md2">
+        <goto-page-btn></goto-page-btn>
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
-import NavListBar from '@/module/NavListBar'
-import GotoPageBtn from "@/components/GotoPageBtn.vue"
+import GotoPageBtn from "@/components/GotoPageBtn.vue";
 export default {
-components:{
-  NavListBar,
-  GotoPageBtn
-}
-}
+  components: {
+    GotoPageBtn
+  }
+};
 </script>
 
 <style scoped>
-.layui-body{
-  top: 60px;
+.layui-body {
+  top: 120px;
   bottom: 44px;
+  padding: 0 20px;
 }
 </style>
