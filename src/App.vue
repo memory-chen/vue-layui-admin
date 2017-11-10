@@ -1,29 +1,19 @@
 <template>
   <div id="app">
-    
-    <header-bar></header-bar>
-    <div>
-      <content-page></content-page>
-      <router-view></router-view>
-    
-    </div>
-     
-    <!-- <regist></regist> -->
+     <Home></Home>
   </div>
 </template>
 
 <script>
-import ContentPage from '@/module/ContentPage'
-import HeaderBar from '@/components/HeaderBar'
-// import Login from '@/module/Login/'
+import Home from '@/module/Home'
+import Login from '@/module/Login/'
 import Regist from '@/module/Regist/'
 export default {
   name: 'app',
   components:{
-    ContentPage,
-    HeaderBar
-    // Login,
-    // Regist
+    Login,
+    Regist,
+    Home
   }
 }
 </script>

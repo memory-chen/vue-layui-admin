@@ -34,8 +34,9 @@ export default {
 
 <style scoped>
 .layui-body {
-  top: 120px;
+  top: 60px;
   bottom: 44px;
   padding: 0 20px;
+  left: 112px;
 }
 </style>

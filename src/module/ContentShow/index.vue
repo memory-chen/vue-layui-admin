@@ -1,13 +1,13 @@
 <template>
-  <div class="contentShow">
+  <div class="contentShow layui-body">
     <nav-list-bar></nav-list-bar>
     <content-data></content-data>
   </div>
 </template>
 
 <script>
-import NavListBar from '@/module/NavListBar'
-import ContentData from '@/module/Content'
+import NavListBar from '@/module/NavListBar/'
+import ContentData from '@/module/Content/'
 export default {
   components:{
     NavListBar,
@@ -16,9 +16,8 @@ export default {
 }
 </script>
 
-<style scoped>
-.contentShow {
-  top: 60px;
-  bottom: 44px;
+<style>
+.layui-body{
+  top:60px;
 }
 </style>
