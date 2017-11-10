@@ -6,6 +6,7 @@ import router from './router'
 require('layui-src/dist/css/layui.css')
 // require('jquery/dist/jquery.min.js')
 require('layui-src/dist/layui.js')
+require('../static/main.css')
 
 Vue.config.productionTip = false
 

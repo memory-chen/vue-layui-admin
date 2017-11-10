@@ -12,6 +12,62 @@
 				</div>
 			</a>
 		</div>
+		<div class="panel col">
+			<a href="javascript:;">
+				<div class="panel_icon">
+					<i class="layui-icon"></i>
+				</div>
+				<div class="panel_word newMessage">
+					<span>5</span>
+					<cite>新消息</cite>
+				</div>
+			</a>
+		</div>
+		<div class="panel col">
+			<a href="javascript:;">
+				<div class="panel_icon">
+					<i class="layui-icon"></i>
+				</div>
+				<div class="panel_word newMessage">
+					<span>5</span>
+					<cite>新消息</cite>
+				</div>
+			</a>
+		</div>
+		<div class="panel col">
+			<a href="javascript:;">
+				<div class="panel_icon">
+					<i class="layui-icon"></i>
+				</div>
+				<div class="panel_word newMessage">
+					<span>5</span>
+					<cite>新消息</cite>
+				</div>
+			</a>
+		</div>
+		<div class="panel col">
+			<a href="javascript:;">
+				<div class="panel_icon">
+					<i class="layui-icon"></i>
+				</div>
+				<div class="panel_word newMessage">
+					<span>5</span>
+					<cite>新消息</cite>
+				</div>
+			</a>
+		</div>
+		<div class="panel col">
+			<a href="javascript:;">
+				<div class="panel_icon">
+					<i class="layui-icon"></i>
+				</div>
+				<div class="panel_word newMessage">
+					<span>5</span>
+					<cite>新消息</cite>
+				</div>
+			</a>
+		</div>
+		
 	</div>
   </div>
 </template>
@@ -52,4 +108,9 @@ export default {
 .sysNotice .layui-table{ margin-top:0; border-left:5px solid #e2e2e2; }
 .sysNotice .title .icon-new1{ position: absolute; top:8px; margin-left: 10px; color:#f00; font-size:25px; }
 .explain .layui-btn{ margin:5px 5px 5px 0; }
+
+
+@media screen and (max-width:1282px){
+	.panel{ width:33.3333%; }
+}
 </style>
