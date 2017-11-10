@@ -14,13 +14,5 @@ export default {};
 </script>
 
 <style scoped>
-.layui-body{overflow:hidden; border-top:5px solid #1AA094;border-left:2px solid #1AA094;}
-.layui-tab-content{ height:100%; padding:0; }
-.layui-tab-item{ position: absolute; top: 41px; bottom:0; left: 0; right: 0; padding: 0; margin: 0; -webkit-overflow-scrolling:touch; overflow:auto;}
-.layui-tab-title .layui-this{ background-color:#1AA094; color:#fff; }
-.layui-tab-title .layui-this:after{ border:none; }
-.layui-tab-title li cite{ font-style: normal; padding-left:5px; }
-.clildFrame.layui-tab-content{ padding-right: 0; }
-.clildFrame.layui-tab-content iframe{ width: 100%; height:100%; border:none; min-width: 320px; position:absolute; }
 
 </style>

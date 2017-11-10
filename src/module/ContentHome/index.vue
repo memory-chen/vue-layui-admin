@@ -1,5 +1,5 @@
 <template>
-  <div id="contentHome layui-body">
+  <div id="contentHome " class="layui-body">
     <nav-list-bar></nav-list-bar>
     <goto-page-btn></goto-page-btn>
   </div>
@@ -17,5 +17,8 @@ components:{
 </script>
 
 <style scoped>
-
+.layui-body{
+  top: 60px;
+  bottom: 44px;
+}
 </style>

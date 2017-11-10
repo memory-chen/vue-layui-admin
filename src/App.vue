@@ -2,9 +2,9 @@
   <div id="app">
     
     <header-bar></header-bar>
-    <div class="layui-col-md12">
-      <content-page class="layui-col-md3"></content-page>
-      <router-view class="layui-col-md9"></router-view>
+    <div>
+      <content-page></content-page>
+      <router-view></router-view>
     
     </div>
      
