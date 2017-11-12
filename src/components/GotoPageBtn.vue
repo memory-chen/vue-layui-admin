@@ -1,116 +1,102 @@
 <template>
-  <div id="gotoPage">
+  <div id="gotoPage" class="childrenBody">
     <div class="panel_box row">
-		<div class="panel col">
-			<a href="javascript:;">
-				<div class="panel_icon">
-					<i class="layui-icon"></i>
-				</div>
-				<div class="panel_word newMessage">
-					<span>5</span>
-					<cite>新消息</cite>
-				</div>
-			</a>
-		</div>
-		<div class="panel col">
-			<a href="javascript:;">
-				<div class="panel_icon">
-					<i class="layui-icon"></i>
-				</div>
-				<div class="panel_word newMessage">
-					<span>5</span>
-					<cite>新消息</cite>
-				</div>
-			</a>
-		</div>
-		<div class="panel col">
-			<a href="javascript:;">
-				<div class="panel_icon">
-					<i class="layui-icon"></i>
-				</div>
-				<div class="panel_word newMessage">
-					<span>5</span>
-					<cite>新消息</cite>
-				</div>
-			</a>
-		</div>
-		<div class="panel col">
-			<a href="javascript:;">
-				<div class="panel_icon">
-					<i class="layui-icon"></i>
-				</div>
-				<div class="panel_word newMessage">
-					<span>5</span>
-					<cite>新消息</cite>
-				</div>
-			</a>
-		</div>
-		<div class="panel col">
-			<a href="javascript:;">
-				<div class="panel_icon">
-					<i class="layui-icon"></i>
-				</div>
-				<div class="panel_word newMessage">
-					<span>5</span>
-					<cite>新消息</cite>
-				</div>
-			</a>
-		</div>
-		<div class="panel col">
-			<a href="javascript:;">
-				<div class="panel_icon">
-					<i class="layui-icon"></i>
-				</div>
-				<div class="panel_word newMessage">
-					<span>5</span>
-					<cite>新消息</cite>
-				</div>
-			</a>
-		</div>
-		
-	</div>
+      <div class="panel col">
+        <a href="javascript:;" data-url="page/message/message.html">
+          <div class="panel_icon">
+            <i class="layui-icon" data-icon="&#xe63a;">&#xe63a;</i>
+          </div>
+          <div class="panel_word newMessage">
+            <span>4</span>
+            <cite>新消息</cite>
+          </div>
+        </a>
+      </div>
+      <div class="panel col">
+        <a href="javascript:;" data-url="page/user/allUsers.html">
+          <div class="panel_icon" style="background-color:#FF5722;">
+            <i class="iconfont icon-dongtaifensishu" data-icon="icon-dongtaifensishu"></i>
+          </div>
+          <div class="panel_word userAll">
+            <span>4</span>
+            <cite>新增人数</cite>
+          </div>
+        </a>
+      </div>
+      <div class="panel col">
+        <a href="javascript:;" data-url="page/user/allUsers.html">
+          <div class="panel_icon" style="background-color:#009688;">
+            <i class="layui-icon" data-icon="&#xe613;">&#xe613;</i>
+          </div>
+          <div class="panel_word userAll">
+            <span>4</span>
+            <cite>用户总数</cite>
+          </div>
+        </a>
+      </div>
+      <div class="panel col">
+        <a href="javascript:;" data-url="page/img/images.html">
+          <div class="panel_icon" style="background-color:#5FB878;">
+            <i class="layui-icon" data-icon="&#xe64a;">&#xe64a;</i>
+          </div>
+          <div class="panel_word imgAll">
+            <span>4</span>
+            <cite>图片总数</cite>
+          </div>
+        </a>
+      </div>
+      <div class="panel col">
+        <a href="javascript:;" data-url="page/news/newsList.html">
+          <div class="panel_icon" style="background-color:#F7B824;">
+            <i class="iconfont icon-wenben" data-icon="icon-wenben"></i>
+          </div>
+          <div class="panel_word waitNews">
+            <span>4</span>
+            <cite>待审核文章</cite>
+          </div>
+        </a>
+      </div>
+      <div class="panel col max_panel">
+        <a href="javascript:;" data-url="page/news/newsList.html">
+          <div class="panel_icon" style="background-color:#2F4056;">
+            <i class="iconfont icon-text" data-icon="icon-text"></i>
+          </div>
+          <div class="panel_word allNews">
+            <span>4</span>
+            <em>文章总数</em>
+            <cite>文章列表</cite>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
   </div>
 </template>
 
 <script>
 export default {
-  data(){
-    return{
-      gotoData:[//多按钮抽离出的数据及图片
-        {
-          
-        }
+  data() {
+    return {
+      gotoData: [
+        //多按钮抽离出的数据及图片
+        {}
       ]
-        
-
-      
-    }
+    };
   }
-}
+};
 </script>
 
 <style scoped>
-.row,.col,.panel_word,.panel_icon{ box-sizing:border-box; -webkit-box-sizing:border-box; -moz-box-sizing:border-box; -o-box-sizing:border-box;}
-.row{ margin-left:-10px; overflow:hidden;}
-.col{ padding-left:10px;}
-.panel{float: left; text-align: center; width:16.666%; min-width:210px; margin-bottom: 10px;}
-.panel_box a{display:block; background-color:#f2f2f2; border-radius:5px; overflow:hidden; }
-.panel_icon{ width:40%; display: inline-block; padding:22px 0; background-color:#54ade8;float:left;}
-.panel_icon i{ font-size:3em; color:#fff;}
-.panel a:hover .panel_icon i{ display:inline-block; transform:rotate(360deg); -webkit-transform:rotate(360deg); -moz-transform:rotate(360deg); -o-transform:rotate(360deg); -ms-transform:rotate(360deg);}
-.panel_word{ width:60%; display: inline-block; float:right; margin-top: 22px; }
-.panel_word span{ font-size:25px; display:block; height:30px; line-height:30px; }
-.allNews em{ font-style:normal; font-size:16px;display: block; }
-.panel_box a .allNews cite{ display:none; }
-.panel_box a cite{ font-size:16px; display: block; font-style:normal; }
-.sysNotice{ width:50%; float: left; }
-.sysNotice .layui-elem-quote{ line-height:26px; position: relative;}
-.sysNotice .layui-table{ margin-top:0; border-left:5px solid #e2e2e2; }
-.sysNotice .title .icon-new1{ position: absolute; top:8px; margin-left: 10px; color:#f00; font-size:25px; }
-.explain .layui-btn{ margin:5px 5px 5px 0; }
-
-
-@media screen and (max-width:1282px){
-	.panel{ width:33.3333%; }
+.childrenBody {
+  margin: 10px 10px 0;
+}
+/* 给一个固定的高 */
+.panel {
+  height: 100px;
+}
+@media screen and (max-width: 1440px) {
+  .panel {
+    width: 33.3333%;
+  }
 }
 </style>

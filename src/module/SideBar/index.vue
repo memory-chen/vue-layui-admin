@@ -3,7 +3,7 @@
     <!-- 右侧导航 -->
     <div class="layui-side layui-bg-black">
       <div class="user-photo">
-        <a class="img" title="我的头像"><img src="http://t.cn/RCzsdCq"></a>
+        <a class="img" title="我的头像"><img src="../../assets/logo.png"></a>
         <p>你好！<span class="userName"></span> 欢迎登录</p>
       </div>
       <div class="navBar layui-side-scroll" style="height: 514px;">

@@ -1,42 +1,32 @@
 <template>
-  <div id="contentHome " class="layui-body">
-    <div class="layui-row layui-col-space20">
-      <div class="layui-col-xs12 layui-col-sm4 layui-col-md2">
-        <goto-page-btn></goto-page-btn>
+  <div id="contentHome" class="childrenBody">
+    <goto-page-btn></goto-page-btn>
+    <div class="layui-row layui-col-space10">
+      <div class="layui-col-md6">
+        <system-list></system-list>
       </div>
-      <div class="layui-col-xs12 layui-col-sm4 layui-col-md2">
-        <goto-page-btn></goto-page-btn>
-      </div>
-      <div class="layui-col-xs12 layui-col-sm4 layui-col-md2">
-        <goto-page-btn></goto-page-btn>
-      </div>
-      <div class="layui-col-xs12 layui-col-sm4 layui-col-md2">
-        <goto-page-btn></goto-page-btn>
-      </div>
-      <div class="layui-col-xs12 layui-col-sm4 layui-col-md2">
-        <goto-page-btn></goto-page-btn>
-      </div>
-      <div class="layui-col-xs12 layui-col-sm4 layui-col-md2">
-        <goto-page-btn></goto-page-btn>
+      <div class="layui-col-md6">
+        <news-list></news-list>
       </div>
     </div>
   </div>
 </template>
 
 <script>
-import GotoPageBtn from "@/components/GotoPageBtn.vue";
-export default {
-  components: {
-    GotoPageBtn
-  }
-};
+  import GotoPageBtn from "@/components/GotoPageBtn.vue";
+  // 添加系统的表单
+  import SystemList from "@/components/SystemList"
+  // 添加最新消息的列表
+  import NewsList from '@/components/NewsList'
+  export default {
+    components: {
+      GotoPageBtn,
+      SystemList,
+      NewsList
+    }
+  };
 </script>
 
 <style scoped>
-.layui-body {
-  top: 60px;
-  bottom: 44px;
-  padding: 0 20px;
-  left: 112px;
-}
+  .layui-body {}
 </style>
