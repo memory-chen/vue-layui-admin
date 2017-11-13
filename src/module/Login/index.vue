@@ -19,14 +19,20 @@
             <img src="./images/code.jpg" width="116" height="36">
           </div>
         </div>
-        <button class="layui-btn login_btn" lay-submit="" lay-filter="login">登录</button>没有账号？点击
-        <a class="layui-tx-red" href="">注册</a>
+        <router-link to="/">
+          <button class="layui-btn login_btn" lay-submit="" lay-filter="login">登录</button>
+        </router-link>没有账号？点击
+        <router-link to="/Regist">
+          <a class="layui-tx-red" href="">注册</a>
+        </router-link>
       </form>
     </div>
   </div>
 </template>
 <script>
-export default {};
+export default {
+  
+};
 </script>
 <style scoped>
 body {

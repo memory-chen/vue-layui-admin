@@ -30,7 +30,7 @@
                   </router-link>
                 </dd>
                 <dd>
-                  <router-link to="/ContentAddPerson">
+                  <router-link to="/ChangePassword">
                     <a href="javascript:;" data-url="page/user/changePwd.html">
                       <i class="iconfont icon-shezhi1" data-icon="icon-shezhi1"></i>
                       <cite>修改密码</cite>

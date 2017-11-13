@@ -35,15 +35,15 @@
         </router-link>
       </div>
       <div class="panel col">
-        <a href="javascript:;" data-url="page/img/images.html">
-          <div class="panel_icon" style="background-color:#5FB878;">
-            <i class="layui-icon" data-icon="&#xe64a;">&#xe64a;</i>
+        <router-link to="/ContentPassArticle">
+          <div class="panel_icon" style="background-color:#009688;">
+            <i class="iconfont icon-wenben" data-icon="icon-wenben"></i>
           </div>
           <div class="panel_word imgAll">
             <span>4</span>
-            <cite>图片总数</cite>
+            <cite>通过文章</cite>
           </div>
-        </a>
+        </router-link>
       </div>
       <div class="panel col">
         <router-link to="/ContentWaitArticle">
