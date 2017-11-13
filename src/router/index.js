@@ -25,13 +25,14 @@ export default new Router({
       path: '/',
       name: 'Home',
       component: Home,
+      redirect:'/ContentHome',
       children: [
         {
-          path: '/',
+          path: '/ContentHome',
           name: 'ContentHome',
           component: ContentHome
         },
-        // 文章列表
+        // 文章列表||全部文章
         {
           path: '/ContentArticle',
           name: 'ContentArticle',
@@ -80,11 +81,11 @@ export default new Router({
           component: ContentPassArticle
         },
         //全部文章
-        {
-          path: '/ContentTotalArticle',
-          name: 'ContentArticle',
-          component: ContentArticle
-        }
+        // {
+        //   path: '/ContentTotalArticle',
+        //   name: 'ContentArticle',
+        //   component: ContentArticle
+        // }
       ]
     },
     //登录

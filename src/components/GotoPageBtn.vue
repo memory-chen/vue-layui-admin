@@ -57,7 +57,7 @@
         </router-link>
       </div>
       <div class="panel col max_panel">
-        <router-link to="/ContentTotalArticle">
+        <router-link to="/ContentArticle">
           <div class="panel_icon" style="background-color:#2F4056;">
             <i class="iconfont icon-text" data-icon="icon-text"></i>
           </div>
