@@ -2,8 +2,7 @@
   <div id="contentHome">
     <header-bar></header-bar>
     <div>
-      <content-page></content-page>
-    
+      <content-page></content-page>    
     </div>
   </div>
 </template>

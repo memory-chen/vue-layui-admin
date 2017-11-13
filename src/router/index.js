@@ -7,6 +7,7 @@ import ContentAddPerson from '@/module/ContentAddPerson'
 import ContentTotalPerson from '@/module/ContentTotalPerson'
 import ContentWaitArticle from '@/module/ContentWaitArticle'
 import ContentPassArticle from '@/module/ContentPassArticle'
+// import ContentTotalArticle from '@/module/ContentTotalArticle'
 import PersonResource from '@/components/PersonResource'
 import ChangePassword from '@/Components/ChangePassword'
 import Login from '@/module/Login'
@@ -45,41 +46,17 @@ export default new Router({
       name: 'ContentNewsInfo',
       component: ContentNewsInfo
     },
-    // 新增人数
-    // {
-    //   path: '/',
-    //   name: 'ContentAddPerson',
-    //   component: ContentAddPerson
-    // },
-    // 全部人数
-    // {
-    //   path: '/',
-    //   name: 'ContentTotalPerson',
-    //   component: ContentTotalPerson
-    // },
-    // 待审核文章
-    // {
-    //   path: '/',
-    //   name: 'ContentWaitArticle',
-    //   component: ContentWaitArticle
-    // },
-    // 通过文章
-    // {
-    //   path: '/',
-    //   name: 'ContentPassArticle',
-    //   component: ContentPassArticle
-    // },
     // 个人资料
-    // {
-    //   path: '/',
-    //   name: 'PersonResource',
-    //   component: PersonResource
-    // },
+    {
+      path: '/PersonResource',
+      name: 'PersonResource',
+      component: PersonResource
+    },
     // 修改密码
     {
       path: '/ContentAddPerson',
-      name: 'ContentAddPerson',
-      component: ContentAddPerson
+      name: 'ChangePassword',
+      component: ChangePassword
     },
     //全部人数
     {
@@ -102,8 +79,8 @@ export default new Router({
     //全部文章
     {
       path: '/ContentTotalArticle',
-      name: 'ContentTotalArticle',
-      component: ContentTotalArticle
+      name: 'ContentArticle',
+      component: ContentArticle
     },
 
   ]
