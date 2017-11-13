@@ -8,8 +8,15 @@
       </div>
       <div class="navBar layui-side-scroll" style="height: 514px;">
         <ul class="layui-nav layui-nav-tree">
-          <li class="layui-nav-item"><a href="javascript:;"><i class="iconfont icon-computer" data-icon="icon-computer"></i><cite>后台首页</cite></a></li>
-          <li class="layui-nav-item"><a href="javascript:;"><i class="iconfont icon-text" data-icon="icon-text"></i><cite>文章列表</cite></a></li>
+          <li class="layui-nav-item">
+            <router-link to="/"><i class="iconfont icon-computer" data-icon="icon-computer"></i>
+            <cite>后台首页</cite>
+            </router-link>
+            </li>
+          <li class="layui-nav-item">
+            <router-link to="/ContentTotalArticle"><i class="iconfont icon-text" data-icon="icon-text"></i><cite>文章列表</cite>
+            </router-link>
+          </li>
         </ul>
       </div>
     </div>
@@ -17,9 +24,7 @@
 </template>
 
 <script>
-export default {
-
-};
+export default {};
 </script>
 
 <style scoped>
@@ -59,17 +64,17 @@ export default {
   padding: 0 10px;
   vertical-align: middle;
 }
-.layui-nav-item{
+.layui-nav-item {
   font-size: 20px;
   color: #fff;
   text-align: center;
 }
-.layui-nav .layui-nav-item>a {
-    font-size: 20px;
-    color: #fff;
+.layui-nav .layui-nav-item > a {
+  font-size: 20px;
+  color: #fff;
 }
-.iconfont{
-  padding:0 10px;
+.iconfont {
+  padding: 0 10px;
   font-size: 20px;
 }
 </style>
