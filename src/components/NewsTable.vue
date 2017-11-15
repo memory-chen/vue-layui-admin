@@ -35,7 +35,7 @@
 
 <script>
 export default {
-  props: ["tablist","changellt"],
+  props: ["tablist"],
   data() {
     return {};
   },
