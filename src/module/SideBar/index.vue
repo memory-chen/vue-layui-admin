@@ -14,7 +14,7 @@
             </router-link>
             </li>
           <li class="layui-nav-item">
-            <router-link to="/ContentTotalArticle"><i class="iconfont icon-text" data-icon="icon-text"></i><cite>文章列表</cite>
+            <router-link to="/ContentArticle"><i class="iconfont icon-text" data-icon="icon-text"></i><cite>文章列表</cite>
             </router-link>
           </li>
         </ul>

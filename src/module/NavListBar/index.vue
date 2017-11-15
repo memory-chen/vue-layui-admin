@@ -4,16 +4,14 @@
       <ul class="layui-tab-title top_tab" id="top_tabs">
         <!-- class="layui-this" 显示高亮 -->
         <router-link :to="{name:'Home'}">
-          <li lay-id=""><i class="iconfont icon-computer"></i> <cite>后台首页</cite></li>
+          <li><i class="iconfont icon-computer"></i> <cite>后台首页</cite></li>
         </router-link>
-        <li lay-id="1510282499027"><i class="iconfont icon-text"></i><cite>文章列表</cite><i class="layui-icon layui-unselect layui-tab-close" data-id="1">ဆ</i></li>
-        <li lay-id="1510454691078"><i class="layui-icon"></i><cite>新消息</cite><i class="layui-icon layui-unselect layui-tab-close" data-id="2">ဆ</i></li>
-        <li lay-id="1510462508539"><i class="iconfont icon-dongtaifensishu"></i><cite>新增人数</cite><i class="layui-icon layui-unselect layui-tab-close" data-id="3">ဆ</i></li>
-        <li lay-id="1510539766249"><i class="layui-icon"></i><cite>用户总数</cite><i class="layui-icon layui-unselect layui-tab-close" data-id="1">ဆ</i></li>
-        <li lay-id="1510541146580"><i class="iconfont icon-wenben"></i><cite>待审核文章</cite><i class="layui-icon layui-unselect layui-tab-close" data-id="4">ဆ</i></li>
-        <li lay-id="1510541146580"><i class="iconfont icon-wenben"></i><cite>通过文章</cite><i class="layui-icon layui-unselect layui-tab-close" data-id="4">ဆ</i></li>
-        <li lay-id="1510542096007"><i class="iconfont icon-zhanghu"></i><cite>个人资料</cite><i class="layui-icon layui-unselect layui-tab-close" data-id="5">ဆ</i></li>
-        <li lay-id="1510542136826" class="layui-this"><i class="iconfont icon-shezhi1"></i><cite>修改密码</cite><i class="layui-icon layui-unselect layui-tab-close" data-id="6">ဆ</i></li>
+        <li v-for="(data,index) in routerLinkList" :key='data.id'>
+          <router-link :to="{name:data.name}">
+            <i class="iconfont icon-text"></i><cite>{{data.text}}</cite>
+          </router-link>
+          <i class="layui-icon layui-unselect layui-tab-close" @click="closePage(data.id)">ဆ</i>
+        </li>
       </ul>
     </div>
   </div>
@@ -21,9 +19,45 @@
 
 <script>
   export default {
-    computed: {
-      name() {
-        return this.data
+    data() {
+      return {
+        routerLinkList: [{
+          text: '文章列表',
+          id: 1,
+          name: 'ContentArticle'
+        }, {
+          text: '新消息',
+          id: 2,
+          name: 'ContentNewsInfo'
+        }, {
+          text: '新增人数',
+          id: 3,
+          name: 'ContentAddPerson'
+        }, {
+          text: '用户总数',
+          id: 4,
+          name: 'ContentTotalPerson'
+        }, {
+          text: '待审核文章',
+          id: 5,
+          name: 'ContentWaitArticle'
+        }, {
+          text: '个人资料',
+          id: 6,
+          name: 'PersonResource'
+        }, {
+          text: '修改密码',
+          id: 7,
+          name: 'ChangePassword'
+        }]
+      }
+    },
+    mounted() {
+        console.log(this.$route.name)
+    },
+    methods: {
+      closePage(index) {
+
       }
     },
   };
@@ -37,5 +71,10 @@
     left: 200px;
     width: 100%;
     height: 50px;
+  }
+  .layui-tab-title li .layui-tab-close {
+    position: absolute;
+    top: 11px;
+    right: -2px;
   }
 </style>
