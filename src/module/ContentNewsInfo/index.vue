@@ -32,7 +32,7 @@
           },
         ],
         changelltyyy: "0",
-        copyData:[]
+        copyData: []
       }
     },
     components: {
@@ -45,18 +45,18 @@
           this.copyData = [];
           console.log(this.newsTable)
           for (let index = 0; index < this.newsTable.length; index++) {
-            const element = this.newsTable[index];            
+            const element = this.newsTable[index];
             if (element.collection == true) {
-                console.log(element)
+              console.log(element)
               this.copyData.push(element)
-            }           
+            }
           }
         } else {
-           this.copyData = this.newsTable;
+          this.copyData = this.newsTable;
         }
       }
     },
-    mounted(){
+    mounted() {
       this.copyData = this.newsTable;
     }
   }
