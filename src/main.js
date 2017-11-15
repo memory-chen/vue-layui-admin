@@ -5,7 +5,7 @@ import App from './App'
 import router from './router'
 import Vuex from 'vuex'
 require('layui-src/dist/css/layui.css')
-// require('jquery/dist/jquery.min.js')
+require('jquery/dist/jquery.min.js')
 require('layui-src/dist/layui.js')
 require('../static/main.css')
 // 引入vuex插件。
