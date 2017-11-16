@@ -5,12 +5,15 @@
 </template>
 
 <script>
+  export default {
+    name: "content"
+  };
 </script>
 
 <style scoped>
-#content{
-  position: absolute;
-  top: 48px;
-  width: 100%;
-}
+  #content {
+    position: absolute;
+    top: 48px;
+    width: 100%;
+  }
 </style>
