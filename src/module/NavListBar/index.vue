@@ -8,11 +8,11 @@
             <i class="iconfont icon-computer"></i> <cite>后台首页</cite>
           </router-link>
         </li>
-        <li v-for="(data,index) in currentPage" :key='data.id' :class="{'layui-this':data.name == $route.name}" v-show="data.show">
+        <li v-for="(data,index) in currentPage" :key='data.id' :class="{'layui-this':data.name == $route.name}">
           <router-link :to="{name:data.name}">
             <i class="iconfont icon-text"></i><cite>{{data.text}}</cite>
           </router-link>
-          <i class="layui-icon layui-unselect layui-tab-close" @click="closePage(data)">ဆ</i>
+          <i class="layui-icon layui-unselect layui-tab-close" @click="closePage(data.id)">ဆ</i>
         </li>
       </ul>
     </div>
@@ -26,61 +26,64 @@
         routerLinkList: [{
           text: '文章列表',
           id: 1,
-          name: 'ContentArticle',
-          show:true
+          name: 'ContentArticle'
         }, {
           text: '新消息',
           id: 2,
-          name: 'ContentNewsInfo',
-          show:true
+          name: 'ContentNewsInfo'
         }, {
           text: '新增人数',
           id: 3,
-          name: 'ContentAddPerson',
-          show:true
+          name: 'ContentAddPerson'
         }, {
           text: '用户总数',
           id: 4,
-          name: 'ContentTotalPerson',
-          show:true
+          name: 'ContentTotalPerson'
         }, {
           text: '待审核文章',
           id: 5,
-          name: 'ContentWaitArticle',
-          show:true
+          name: 'ContentWaitArticle'
         }, {
           text: '通过文章',
           id: 6,
-          name: 'ContentPassArticle',
-          show:true
+          name: 'ContentPassArticle'
         }, {
           text: '个人资料',
           id: 7,
-          name: 'PersonResource',
-          show:true
+          name: 'PersonResource'
         }, {
           text: '修改密码',
           id: 8,
-          name: 'ChangePassword',
-          show:true
+          name: 'ChangePassword'
         }],
-        copyRouterList: [],
+        copyRouterList: []
       }
     },
-<<<<<<< HEAD
     mounted() {
       
     },
-=======
->>>>>>> d768f817a294e0df793744a6ebd2f556dc309bde
     methods: {
-      closePage(data) {
-        data.show = false
-        
+      closePage(id) {
+        for (let index = 0; index < this.copyRouterList.length; index++) {
+          const element = this.copyRouterList[index];
+          if (id == this.copyRouterList[0].id) {
+            this.$router.push({
+              name: 'ContentHome'
+            })
+            this.copyRouterList.splice(0, 1);
+          } else {
+            if (element.id == id) {
+              this.$router.push({
+                name: this.copyRouterList[index - 1]['name']
+              })
+              this.copyRouterList.splice(index, 1);
+            }
+          }
+        }
       }
     },
     computed: {
-      currentPage(){       
+      currentPage() {
         if (this.$route.name == '/' || this.$route.name == 'ContentHome') {
           return this.copyRouterList;
         } else {
@@ -90,13 +93,11 @@
               this.copyRouterList.push(element);
             }
           }
-          // this.$nextTick(()=>{
-            this.copyRouterList = Array.from(new Set(this.copyRouterList));
-          // })
-          return this.copyRouterList;
+          return this.copyRouterList = Array.from(new Set(this.copyRouterList));
         }
       }
-    }
+    },
+    
   };
 </script>
 
