@@ -13,213 +13,29 @@
       </colgroup>
       <thead>
         <tr>
-          <th><input type="checkbox" name="" lay-skin="primary" lay-filter="allChoose" id="allChoose">
-            <div class="layui-unselect layui-form-checkbox" lay-skin="primary"><i class="layui-icon"></i></div>
+          <th>
+            <div @click="allChecked" v-show="AllcheckClick"  class="layui-unselect layui-form-checkbox layui-form-checked" lay-skin="primary"><i class="layui-icon"></i></div>
+            <div @click="allChecked" v-show="!AllcheckClick" class="layui-unselect layui-form-checkbox" lay-skin="primary"><i class="layui-icon"></i></div>
           </th>
-          <th style="text-align:left;">文章标题</th>
-          <th>发布人</th>
-          <th>审核状态</th>
-          <th>浏览权限</th>
-          <th>是否展示</th>
-          <th>发布时间</th>
-          <th>操作</th>
+          <th v-for="(table,index) in tableData.headTh" :key="table" style="text-align:left;">{{table}}</th>
         </tr>
       </thead>
       <tbody class="news_content">
-        <tr>
-          <td><input type="checkbox" name="checked" lay-skin="primary" lay-filter="choose">
-            <div class="layui-unselect layui-form-checkbox" lay-skin="primary"><i class="layui-icon"></i></div>
+        <tr v-for="(tabcont,index) in tableData.tableContent" :key="tabcont.title">
+          <td>
+            <div @click="CheckClick(index)" v-show="tabcont.checked"  class="layui-unselect layui-form-checkbox layui-form-checked" lay-skin="primary"><i class="layui-icon"></i></div>
+            <div @click="CheckClick(index)" v-show="!tabcont.checked" class="layui-unselect layui-form-checkbox" lay-skin="primary"><i class="layui-icon"></i></div>
           </td>
-          <td align="left">css3用transition实现边框动画效果</td>
-          <td>请叫我马哥</td>
-          <td>审核通过</td>
-          <td>开放浏览</td>
+          <td align="left">{{tabcont.title}}</td>
+          <td>{{tabcont.publisher}}</td>
+          <td>{{tabcont.examine}}</td>
+          <td>{{tabcont.jurisdiction}}</td>
           <td><input type="checkbox" name="show" lay-skin="switch" lay-text="是|否" lay-filter="isShow">
             <div class="layui-unselect layui-form-switch" lay-skin="_switch"><em>否</em><i></i></div>
           </td>
-          <td>2017-04-14</td>
+          <td>{{tabcont.time}}</td>
           <td><a class="layui-btn layui-btn-mini news_edit"><i class="iconfont icon-edit"></i> 编辑</a><a class="layui-btn layui-btn-normal layui-btn-mini news_collect"><i class="layui-icon"></i> 收藏</a><a class="layui-btn layui-btn-danger layui-btn-mini news_del"
               data-id="1"><i class="layui-icon"></i> 删除</a></td>
-        </tr>
-        <tr>
-          <td><input type="checkbox" name="checked" lay-skin="primary" lay-filter="choose">
-            <div class="layui-unselect layui-form-checkbox" lay-skin="primary"><i class="layui-icon"></i></div>
-          </td>
-          <td align="left">自定义的模块名称可以包含/吗</td>
-          <td>请叫我马哥</td>
-          <td style="color:#f00">待审核</td>
-          <td>开放浏览</td>
-          <td><input type="checkbox" name="show" lay-skin="switch" lay-text="是|否" lay-filter="isShow" checked="">
-            <div class="layui-unselect layui-form-switch layui-form-onswitch" lay-skin="_switch"><em>是</em><i></i></div>
-          </td>
-          <td>2017-04-14</td>
-          <td><a class="layui-btn layui-btn-mini news_edit"><i class="iconfont icon-edit"></i> 编辑</a><a class="layui-btn layui-btn-normal layui-btn-mini news_collect"><i class="layui-icon"></i> 收藏</a><a class="layui-btn layui-btn-danger layui-btn-mini news_del"
-              data-id="2"><i class="layui-icon"></i> 删除</a></td>
-        </tr>
-        <tr>
-          <td><input type="checkbox" name="checked" lay-skin="primary" lay-filter="choose">
-            <div class="layui-unselect layui-form-checkbox" lay-skin="primary"><i class="layui-icon"></i></div>
-          </td>
-          <td align="left">layui.tree如何ajax加载二级菜单</td>
-          <td>admin</td>
-          <td>审核通过</td>
-          <td>开放浏览</td>
-          <td><input type="checkbox" name="show" lay-skin="switch" lay-text="是|否" lay-filter="isShow" checked="">
-            <div class="layui-unselect layui-form-switch layui-form-onswitch" lay-skin="_switch"><em>是</em><i></i></div>
-          </td>
-          <td>2017-04-14</td>
-          <td><a class="layui-btn layui-btn-mini news_edit"><i class="iconfont icon-edit"></i> 编辑</a><a class="layui-btn layui-btn-normal layui-btn-mini news_collect"><i class="layui-icon"></i> 收藏</a><a class="layui-btn layui-btn-danger layui-btn-mini news_del"
-              data-id="3"><i class="layui-icon"></i> 删除</a></td>
-        </tr>
-        <tr>
-          <td><input type="checkbox" name="checked" lay-skin="primary" lay-filter="choose">
-            <div class="layui-unselect layui-form-checkbox" lay-skin="primary"><i class="layui-icon"></i></div>
-          </td>
-          <td align="left">layui.upload如何带参数？像jq的data:{}那样</td>
-          <td>admin</td>
-          <td>审核通过</td>
-          <td>开放浏览</td>
-          <td><input type="checkbox" name="show" lay-skin="switch" lay-text="是|否" lay-filter="isShow" checked="">
-            <div class="layui-unselect layui-form-switch layui-form-onswitch" lay-skin="_switch"><em>是</em><i></i></div>
-          </td>
-          <td>2017-04-14</td>
-          <td><a class="layui-btn layui-btn-mini news_edit"><i class="iconfont icon-edit"></i> 编辑</a><a class="layui-btn layui-btn-normal layui-btn-mini news_collect"><i class="layui-icon"></i> 收藏</a><a class="layui-btn layui-btn-danger layui-btn-mini news_del"
-              data-id="4"><i class="layui-icon"></i> 删除</a></td>
-        </tr>
-        <tr>
-          <td><input type="checkbox" name="checked" lay-skin="primary" lay-filter="choose">
-            <div class="layui-unselect layui-form-checkbox" lay-skin="primary"><i class="layui-icon"></i></div>
-          </td>
-          <td align="left">表单元素长度应该怎么调整才美观</td>
-          <td>请叫我马哥</td>
-          <td style="color:#f00">待审核</td>
-          <td>开放浏览</td>
-          <td><input type="checkbox" name="show" lay-skin="switch" lay-text="是|否" lay-filter="isShow" checked="">
-            <div class="layui-unselect layui-form-switch layui-form-onswitch" lay-skin="_switch"><em>是</em><i></i></div>
-          </td>
-          <td>2017-04-14</td>
-          <td><a class="layui-btn layui-btn-mini news_edit"><i class="iconfont icon-edit"></i> 编辑</a><a class="layui-btn layui-btn-normal layui-btn-mini news_collect"><i class="layui-icon"></i> 收藏</a><a class="layui-btn layui-btn-danger layui-btn-mini news_del"
-              data-id="5"><i class="layui-icon"></i> 删除</a></td>
-        </tr>
-        <tr>
-          <td><input type="checkbox" name="checked" lay-skin="primary" lay-filter="choose">
-            <div class="layui-unselect layui-form-checkbox" lay-skin="primary"><i class="layui-icon"></i></div>
-          </td>
-          <td align="left">layui 利用ajax冲获取到json 数据后 怎样进行渲染</td>
-          <td>admin</td>
-          <td>审核通过</td>
-          <td>开放浏览</td>
-          <td><input type="checkbox" name="show" lay-skin="switch" lay-text="是|否" lay-filter="isShow" checked="">
-            <div class="layui-unselect layui-form-switch layui-form-onswitch" lay-skin="_switch"><em>是</em><i></i></div>
-          </td>
-          <td>2017-04-14</td>
-          <td><a class="layui-btn layui-btn-mini news_edit"><i class="iconfont icon-edit"></i> 编辑</a><a class="layui-btn layui-btn-normal layui-btn-mini news_collect"><i class="layui-icon"></i> 收藏</a><a class="layui-btn layui-btn-danger layui-btn-mini news_del"
-              data-id="6"><i class="layui-icon"></i> 删除</a></td>
-        </tr>
-        <tr>
-          <td><input type="checkbox" name="checked" lay-skin="primary" lay-filter="choose">
-            <div class="layui-unselect layui-form-checkbox" lay-skin="primary"><i class="layui-icon"></i></div>
-          </td>
-          <td align="left">微信页面中富文本编辑器LayEdit无法使用</td>
-          <td>请叫我马哥</td>
-          <td style="color:#f00">待审核</td>
-          <td>开放浏览</td>
-          <td><input type="checkbox" name="show" lay-skin="switch" lay-text="是|否" lay-filter="isShow">
-            <div class="layui-unselect layui-form-switch" lay-skin="_switch"><em>否</em><i></i></div>
-          </td>
-          <td>2017-04-14</td>
-          <td><a class="layui-btn layui-btn-mini news_edit"><i class="iconfont icon-edit"></i> 编辑</a><a class="layui-btn layui-btn-normal layui-btn-mini news_collect"><i class="layui-icon"></i> 收藏</a><a class="layui-btn layui-btn-danger layui-btn-mini news_del"
-              data-id="7"><i class="layui-icon"></i> 删除</a></td>
-        </tr>
-        <tr>
-          <td><input type="checkbox" name="checked" lay-skin="primary" lay-filter="choose">
-            <div class="layui-unselect layui-form-checkbox" lay-skin="primary"><i class="layui-icon"></i></div>
-          </td>
-          <td align="left">layui 什么时候发布新的版本呀</td>
-          <td>请叫我马哥</td>
-          <td>审核通过</td>
-          <td>开放浏览</td>
-          <td><input type="checkbox" name="show" lay-skin="switch" lay-text="是|否" lay-filter="isShow" checked="">
-            <div class="layui-unselect layui-form-switch layui-form-onswitch" lay-skin="_switch"><em>是</em><i></i></div>
-          </td>
-          <td>2017-04-14</td>
-          <td><a class="layui-btn layui-btn-mini news_edit"><i class="iconfont icon-edit"></i> 编辑</a><a class="layui-btn layui-btn-normal layui-btn-mini news_collect"><i class="layui-icon"></i> 收藏</a><a class="layui-btn layui-btn-danger layui-btn-mini news_del"
-              data-id="8"><i class="layui-icon"></i> 删除</a></td>
-        </tr>
-        <tr>
-          <td><input type="checkbox" name="checked" lay-skin="primary" lay-filter="choose">
-            <div class="layui-unselect layui-form-checkbox" lay-skin="primary"><i class="layui-icon"></i></div>
-          </td>
-          <td align="left">layui上传组件不支持上传前的图片预览嘛？</td>
-          <td>admin</td>
-          <td>审核通过</td>
-          <td>开放浏览</td>
-          <td><input type="checkbox" name="show" lay-skin="switch" lay-text="是|否" lay-filter="isShow" checked="">
-            <div class="layui-unselect layui-form-switch layui-form-onswitch" lay-skin="_switch"><em>是</em><i></i></div>
-          </td>
-          <td>2017-04-14</td>
-          <td><a class="layui-btn layui-btn-mini news_edit"><i class="iconfont icon-edit"></i> 编辑</a><a class="layui-btn layui-btn-normal layui-btn-mini news_collect"><i class="layui-icon"></i> 收藏</a><a class="layui-btn layui-btn-danger layui-btn-mini news_del"
-              data-id="9"><i class="layui-icon"></i> 删除</a></td>
-        </tr>
-        <tr>
-          <td><input type="checkbox" name="checked" lay-skin="primary" lay-filter="choose">
-            <div class="layui-unselect layui-form-checkbox" lay-skin="primary"><i class="layui-icon"></i></div>
-          </td>
-          <td align="left">关于layer.confirm点击无法关闭的疑惑</td>
-          <td>admin</td>
-          <td style="color:#f00">待审核</td>
-          <td>开放浏览</td>
-          <td><input type="checkbox" name="show" lay-skin="switch" lay-text="是|否" lay-filter="isShow" checked="">
-            <div class="layui-unselect layui-form-switch layui-form-onswitch" lay-skin="_switch"><em>是</em><i></i></div>
-          </td>
-          <td>2017-04-14</td>
-          <td><a class="layui-btn layui-btn-mini news_edit"><i class="iconfont icon-edit"></i> 编辑</a><a class="layui-btn layui-btn-normal layui-btn-mini news_collect"><i class="layui-icon"></i> 收藏</a><a class="layui-btn layui-btn-danger layui-btn-mini news_del"
-              data-id="10"><i class="layui-icon"></i> 删除</a></td>
-        </tr>
-        <tr>
-          <td><input type="checkbox" name="checked" lay-skin="primary" lay-filter="choose">
-            <div class="layui-unselect layui-form-checkbox" lay-skin="primary"><i class="layui-icon"></i></div>
-          </td>
-          <td align="left">layui form表单提交成功如何拿取返回值</td>
-          <td>请叫我马哥</td>
-          <td>审核通过</td>
-          <td>开放浏览</td>
-          <td><input type="checkbox" name="show" lay-skin="switch" lay-text="是|否" lay-filter="isShow" checked="">
-            <div class="layui-unselect layui-form-switch layui-form-onswitch" lay-skin="_switch"><em>是</em><i></i></div>
-          </td>
-          <td>2017-04-14</td>
-          <td><a class="layui-btn layui-btn-mini news_edit"><i class="iconfont icon-edit"></i> 编辑</a><a class="layui-btn layui-btn-normal layui-btn-mini news_collect"><i class="layui-icon"></i> 收藏</a><a class="layui-btn layui-btn-danger layui-btn-mini news_del"
-              data-id="11"><i class="layui-icon"></i> 删除</a></td>
-        </tr>
-        <tr>
-          <td><input type="checkbox" name="checked" lay-skin="primary" lay-filter="choose">
-            <div class="layui-unselect layui-form-checkbox" lay-skin="primary"><i class="layui-icon"></i></div>
-          </td>
-          <td align="left">layer mobileV2.0 yes回调函数无法用？</td>
-          <td>请叫我马哥</td>
-          <td style="color:#f00">待审核</td>
-          <td>开放浏览</td>
-          <td><input type="checkbox" name="show" lay-skin="switch" lay-text="是|否" lay-filter="isShow" checked="">
-            <div class="layui-unselect layui-form-switch layui-form-onswitch" lay-skin="_switch"><em>是</em><i></i></div>
-          </td>
-          <td>2017-04-14</td>
-          <td><a class="layui-btn layui-btn-mini news_edit"><i class="iconfont icon-edit"></i> 编辑</a><a class="layui-btn layui-btn-normal layui-btn-mini news_collect"><i class="layui-icon"></i> 收藏</a><a class="layui-btn layui-btn-danger layui-btn-mini news_del"
-              data-id="12"><i class="layui-icon"></i> 删除</a></td>
-        </tr>
-        <tr>
-          <td><input type="checkbox" name="checked" lay-skin="primary" lay-filter="choose">
-            <div class="layui-unselect layui-form-checkbox" lay-skin="primary"><i class="layui-icon"></i></div>
-          </td>
-          <td align="left">关于layer中自带的btn回调弹层页面的内容</td>
-          <td>admin</td>
-          <td style="color:#f00">待审核</td>
-          <td>开放浏览</td>
-          <td><input type="checkbox" name="show" lay-skin="switch" lay-text="是|否" lay-filter="isShow">
-            <div class="layui-unselect layui-form-switch" lay-skin="_switch"><em>否</em><i></i></div>
-          </td>
-          <td>2017-04-14</td>
-          <td><a class="layui-btn layui-btn-mini news_edit"><i class="iconfont icon-edit"></i> 编辑</a><a class="layui-btn layui-btn-normal layui-btn-mini news_collect"><i class="layui-icon"></i> 收藏</a><a class="layui-btn layui-btn-danger layui-btn-mini news_del"
-              data-id="13"><i class="layui-icon"></i> 删除</a></td>
         </tr>
       </tbody>
     </table>
@@ -227,10 +43,92 @@
 </template>
 
 <script>
-  export default {
-  }
+export default {
+  data() {
+    return {
+      tableData: {
+        headTh: ["文章标题", "发布人", "审核状态", "浏览权限", "是否展示", "发布时间", "操作"],
+        // Allchecked: false,
+        tableContent: [
+          {
+            title: "css3用transition实现边框动画效果",
+            publisher: "请叫我马哥",
+            examine: "审核通过",
+            jurisdiction: "开放浏览",
+            exhibition: "1",
+            time: "2017-04-14",
+            checked: false
+          },
+          {
+            title: "css3用transition实现边框动画效果",
+            publisher: "请叫我马哥",
+            examine: "审核通过",
+            jurisdiction: "开放浏览",
+            exhibition: "1",
+            time: "2017-04-14",
+            checked: false
+          }
+        ]
+      }
+    };
+  },
+  methods: {
+    // 选中或取消选中
+    CheckClick(index) {
+      this.tableData.tableContent[index].checked = !this.tableData.tableContent[index].checked;
+      console.log(this.tableData.tableContent[index].checked)
+        // this.tableData.tableContent.forEach(element => {
+        //   if (element.checked === false) {
+        //     this.tableData.Allchecked = false;
+        //     return false;
+        //   }else {
+        //     alert(1)
+        //     this.tableData.Allchecked = true;
+        //   }
+        // });
+    },
+    // 全选、全不选
+    allChecked() {
+      // this.tableData.Allchecked = !this.tableData.Allchecked;
+      if (this.tableData.Allchecked) {
+        this.tableData.tableContent.forEach(element => {
+          element.checked = true;
+        });
+      } else {
+        this.tableData.tableContent.forEach(element => {
+          element.checked = false;
+        });
+      }
+    },
+    
+  },
+  computed: {
+      AllcheckClick() {
+        this.tableData.tableContent.forEach(element => {
+          if (element.checked === false) {
+            return false;
+          }else {
+            return true;
+          }
+        });
+      }
+    },
+};
 </script>
 
-<style>
-
+<style scoped>
+input[type="checkbox"] {
+  display: inline-block !important;
+  position: relative;
+  top: 0;
+  width: 16px;
+  height: 16px;
+  line-height: 16px;
+  border: 1px solid #d2d2d2;
+  font-size: 12px;
+  border-radius: 2px;
+  background-color: #fff !important;
+  -webkit-transition: 0.1s linear;
+  transition: 0.1s linear;
+}
 </style>

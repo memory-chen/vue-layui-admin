@@ -60,7 +60,7 @@
       }
     },
     mounted() {
-      this.copyRouterList = this.routerLinkList;
+      
     },
     methods: {
       closePage(id) {

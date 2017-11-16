@@ -3,20 +3,19 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
-import Vuex from 'vuex'
+import store from './store'
 require('layui-src/dist/css/layui.css')
 require('jquery/dist/jquery.min.js')
 require('layui-src/dist/layui.js')
 require('../static/main.css')
 // 引入vuex插件。
-Vue.use(Vuex)
-
 Vue.config.productionTip = false
 
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
   router,
+  store: store,
   template: '<App/>',
   components: {
     App
