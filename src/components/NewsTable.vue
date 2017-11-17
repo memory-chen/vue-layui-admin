@@ -18,10 +18,10 @@
           <td class="msg_time">{{news.time}}</td>
           <td class="msg_reply"><span v-show="news.reply">已回复</span></td>
           <td class="msg_opr"> 
-            <button v-show="!news.collection" @click="CollectionTrue(index)" class="layui-btn layui-btn-mini layui-btn-normal msg_collect">
+            <button v-show="!news.collection" @click="Collection(news)" class="layui-btn layui-btn-mini layui-btn-normal msg_collect">
               <i class="layui-icon"></i> 收藏
             </button> 
-            <button v-show="news.collection" @click="CollectionFalse(index)" class="layui-btn layui-btn-mini layui-btn-normal msg_collect">
+            <button v-show="news.collection" @click="Collection(news)" class="layui-btn layui-btn-mini layui-btn-normal msg_collect">
               <i class="iconfont icon-star"></i> 已收藏
             </button> 
             <a class="layui-btn layui-btn-mini reply_msg"><i class="layui-icon"></i> 回复
@@ -43,26 +43,10 @@ export default {
    
   },
   methods:{
-    CollectionTrue(index) {
-      this.tablist[index].collection = true;
-    },
-    CollectionFalse(index) {
-      this.tablist[index].collection = false;
-    },
-    // collectData() {
-    //   for (let index = 0; index < this.tablist.length; index++) {
-    //     const element = this.tablist[index];
-    //     if (element.collection !== true) {
-    //       this.tablist.splice(index, 1);
-    //     }
-    //   }
-    // },
-    // changecoll(){
-    // console.log(this.changeCollect)
-    //   if(this.changeCollect===1){
-    //     console.log(1)
-    //   }
-    // }
+    // 根据传入的值取相反的值。
+    Collection(data) {
+      data.collection = !data.collection;
+    }
   },
   computed:{
      

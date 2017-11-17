@@ -70,20 +70,22 @@
       }
     },
     mounted() {
-      
     },
     methods: {
+      // 关闭按钮的方法
       closePage(data) {
-        // data.show = true;
         var len = this.currentPage.length;
+        // 获取元素当前在数组的下标。
         var index = this.isHasElementOne(this.currentPage, data.name)
+        // 点击按钮有三种情况
+        // 1，点击的按钮是当前的组件，并且不等于0，不在第一个位置，则路由跳转到前一个位置。
         if (this.$route.name == data.name && index !== 0) {
           this.$router.push(this.arr[index - 1].name)
           data.show = true;
-        } else if (this.$route.name === data.name && index === 0) {
+        } else if (this.$route.name === data.name && index === 0) {//2,点击按钮是当前组价，并且index是为0，则跳转到后台首页。
           this.$router.push('ContentHome');
           data.show = true;
-        } else {
+        } else {// 3,不是当前的组件按钮，所以直接删除当前的值。
           this.arr.splice(index, 1)
         }
       },
@@ -95,45 +97,39 @@
           }
         }
         return -1;
-      },
-      // 保存当前的数据
-      // keepData(arr) {
-      //   for (let i = 0; i < arr.length; i++) {
-      //     const element = arr[i];
-      //   }
-      // }
+      }
     },
     computed: {
+      // 根据点击的路由放到导航的数据。
       currentPage() {
         for (let i = 0; i < this.routerLinkList.length; i++) {
           const element = this.routerLinkList[i];
+          // 根据路由的名字，判断在data数据里面是否有这个元素，然后添加到新的数组中。
           if (this.$route.name == element.name && !element.show) {
             this.arr.push(element)
           }
         }
-        this.arr = Array.from(new Set(this.arr))
+        // 用es6的set去重
+        this.arr = Array.from(new Set(this.arr));
+        // 
         for (let i = 0; i < this.arr.length; i++) {
           const element = this.arr[i];
+          // 根据元素里面show的值，改变this.arr的值。
           if (element.show) {
+            // 回归原始的值。吧show改成false
             for (let i = 0; i < this.routerLinkList.length; i++) {
               const data = this.routerLinkList[i];
               if (element.id == data.id) {
                 data.show = false
               }
             }
+            // 去除选中的值。
             this.arr.splice(i, 1)
           }
         }
+        // 放回数据。
         return Array.from(new Set(this.arr))
-      },
-      // 保存数据
-      // sessionBar() {
-      //   return this.currentPage.join('-');
-      // }
-    },
-    // 
-    mounted() {
-      // 
+      }
     }
   };
 </script>

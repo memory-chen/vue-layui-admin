@@ -17,7 +17,7 @@
         <a class="layui-btn audit_btn">审核文章</a>
       </div>
       <div class="layui-inline">
-        <a class="layui-btn layui-btn-danger batchDel">批量删除</a>
+        <a class="layui-btn layui-btn-danger batchDel" @click="moreDelete">批量删除</a>
       </div>
       <div class="layui-inline">
         <div class="layui-form-mid layui-word-aux">本页面刷新后除新添加的文章外所有操作无效，关闭页面所有数据重置</div>
@@ -28,6 +28,18 @@
 
 <script>
   export default {
+    data() {
+      return {
+        del:{
+          isDel:true
+        }
+      }
+    },
+    methods: {
+      moreDelete() {
+        this.$emit('delInfo',this.del)
+      }
+    },
   }
 </script>
 
