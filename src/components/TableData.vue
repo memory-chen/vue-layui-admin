@@ -14,8 +14,8 @@
       <thead>
         <tr>
           <th>
-            <div @click="allChecked" v-show="AllcheckClick"  class="layui-unselect layui-form-checkbox layui-form-checked" lay-skin="primary"><i class="layui-icon"></i></div>
-            <div @click="allCheckedF" v-show="!AllcheckClick" class="layui-unselect layui-form-checkbox" lay-skin="primary"><i class="layui-icon"></i></div>
+            <div @click="allChecked" v-show="!AllcheckClick"  class="layui-unselect layui-form-checkbox layui-form-checked" lay-skin="primary"><i class="layui-icon"></i></div>
+            <div @click="allChecked" v-show="AllcheckClick" class="layui-unselect layui-form-checkbox" lay-skin="primary"><i class="layui-icon"></i></div>
           </th>
           <th v-for="(table,index) in tableData.headTh" :key="table" style="text-align:left;">{{table}}</th>
         </tr>
@@ -92,13 +92,6 @@ export default {
       // this.tableData.Allchecked = !this.tableData.Allchecked;
         this.tableData.tableContent.forEach(element => {
           element.checked = true;
-          // alert(elementchecked)
-        });
-    },
-    allCheckedF() {
-      // this.tableData.Allchecked = !this.tableData.Allchecked;
-        this.tableData.tableContent.forEach(element => {
-          element.checked = false;
           // alert(elementchecked)
         });
     },
