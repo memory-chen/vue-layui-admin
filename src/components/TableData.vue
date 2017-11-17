@@ -14,8 +14,8 @@
       <thead>
         <tr>
           <th>
-            <div @click="allChecked" v-show="AllcheckClick" class="layui-unselect layui-form-checkbox layui-form-checked" lay-skin="primary"><i class="layui-icon"></i></div>
-            <div @click="allChecked" v-show="!AllcheckClick" class="layui-unselect layui-form-checkbox" lay-skin="primary"><i class="layui-icon"></i></div>
+            <div @click="allChecked(AllcheckClick.flag)" v-show="AllcheckClick.flag" class="layui-unselect layui-form-checkbox layui-form-checked" lay-skin="primary"><i class="layui-icon"></i></div>
+            <div @click="allChecked(AllcheckClick.flag)" v-show="!AllcheckClick.flag" class="layui-unselect layui-form-checkbox" lay-skin="primary"><i class="layui-icon"></i></div>
           </th>
           <th v-for="(table,index) in tableData.headTh" :key="table" style="text-align:left;">{{table}}</th>
         </tr>
@@ -30,8 +30,10 @@
           <td>{{tabcont.publisher}}</td>
           <td>{{tabcont.examine}}</td>
           <td>{{tabcont.jurisdiction}}</td>
-          <td><input type="checkbox" name="show" lay-skin="switch" lay-text="是|否" lay-filter="isShow">
-            <div class="layui-unselect layui-form-switch" lay-skin="_switch"><em>否</em><i></i></div>
+          <td >
+            <input type="checkbox" name="show" lay-skin="switch" lay-text="是|否">
+            <!-- 变成是，绿色：layui-form-onswitch -->
+            <div class="layui-unselect layui-form-switch" lay-skin="_switch" :class="{'layui-form-onswitch':tabcont.show}" @click="isShow(tabcont)"><em>{{showText}}</em><i></i></div>
           </td>
           <td>{{tabcont.time}}</td>
           <td><a class="layui-btn layui-btn-mini news_edit"><i class="iconfont icon-edit"></i> 编辑</a><a class="layui-btn layui-btn-normal layui-btn-mini news_collect"><i class="layui-icon"></i> 收藏</a><a class="layui-btn layui-btn-danger layui-btn-mini news_del"
@@ -56,7 +58,8 @@
               jurisdiction: "开放浏览",
               exhibition: "1",
               time: "2017-04-14",
-              checked: false
+              checked: false,
+              show:false
             },
             {
               title: "css3用transition实现边框动画效果",
@@ -65,9 +68,10 @@
               jurisdiction: "开放浏览",
               exhibition: "1",
               time: "2017-04-14",
-              checked: false
+              checked: false,
+              show:false
             }
-          ]
+          ]          
         }
       };
     },
@@ -75,43 +79,54 @@
       // 选中或取消选中
       CheckClick(index) {
         this.tableData.tableContent[index].checked = !this.tableData.tableContent[index].checked;
-        // console.log(this.tableData.tableContent[index].checked)
       },
       // 全选、全不选
-      allChecked() {
-        this.tableData.tableContent.forEach(element => {
-          element.checked = true;
-        });
+      allChecked(bool) {
+        // if()
+        console.log(bool)
+        var array = this.tableData.tableContent;
+        if(bool===true){
+          array.forEach(element => {
+            element.checked = false;
+          })
+        }else{
+          array.forEach(element => {
+            element.checked = true;
+          })
+        }
+      },
+      // 是否的按钮
+      isShow(tabcont) {
+        tabcont.show = ! tabcont.show;
       }
     },
     computed: {
+      //计算是否全部的属性；
       AllcheckClick() {
         var array = this.tableData.tableContent;
-        array.forEach(element => {
-          if (element.checked === true) {
-            return element.checked;
-          } else {
-            return element.checked;
+        for (let i = 0; i < array.length; i++) {
+          const element = array[i];
+          if (element.checked === false) {
+            return {
+              flag: false
+            }
           }
-        });
+        }
+        return {
+          flag: true
+        };
+      },
+      showText(){
+        var array = this.tableData.tableContent;
+        for (let i = 0; i < array.length; i++) {
+          const element = array[i];
+          return element.show ? '是':'否'
+        }
       }
     },
   };
 </script>
 
 <style scoped>
-  input[type="checkbox"] {
-    display: inline-block !important;
-    position: relative;
-    top: 0;
-    width: 16px;
-    height: 16px;
-    line-height: 16px;
-    border: 1px solid #d2d2d2;
-    font-size: 12px;
-    border-radius: 2px;
-    background-color: #fff !important;
-    -webkit-transition: 0.1s linear;
-    transition: 0.1s linear;
-  }
+
 </style>
