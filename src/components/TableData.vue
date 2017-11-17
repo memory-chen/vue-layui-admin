@@ -189,5 +189,4 @@
 </script>
 
 <style scoped>
-  .layui-btn span {}
 </style>
