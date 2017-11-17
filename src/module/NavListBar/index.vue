@@ -13,7 +13,7 @@
           <router-link :to="{name:data.name}">
             <i class="iconfont icon-text"></i><cite>{{data.text}}</cite>
           </router-link>
-          <i class="layui-icon layui-unselect layui-tab-close" @click="closePage(data.id)">ဆ</i>
+          <i class="layui-icon layui-unselect layui-tab-close" @click="closePage(data)">ဆ</i>
         </li>
       </ul>
     </div>
@@ -97,11 +97,11 @@
         return -1;
       },
       // 保存当前的数据
-      keepData(arr) {
-        for (let i = 0; i < arr.length; i++) {
-          const element = arr[i];
-        }
-      }
+      // keepData(arr) {
+      //   for (let i = 0; i < arr.length; i++) {
+      //     const element = arr[i];
+      //   }
+      // }
     },
     computed: {
       currentPage() {
@@ -127,9 +127,9 @@
         return Array.from(new Set(this.arr))
       },
       // 保存数据
-      sessionBar() {
-        return this.currentPage.join('-');
-      }
+      // sessionBar() {
+      //   return this.currentPage.join('-');
+      // }
     },
     // 
     mounted() {

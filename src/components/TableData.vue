@@ -75,9 +75,7 @@ export default {
   methods: {
     // 选中或取消选中
     CheckClick(index) {
-      this.tableData.tableContent[index].checked = !this.tableData.tableContent[
-        index
-      ].checked;
+      this.tableData.tableContent[index].checked = !this.tableData.tableContent[index].checked;
       // console.log(this.tableData.tableContent[index].checked)
     },
     // 全选、全不选
@@ -111,18 +109,5 @@ export default {
 </script>
 
 <style scoped>
-input[type="checkbox"] {
-  display: inline-block !important;
-  position: relative;
-  top: 0;
-  width: 16px;
-  height: 16px;
-  line-height: 16px;
-  border: 1px solid #d2d2d2;
-  font-size: 12px;
-  border-radius: 2px;
-  background-color: #fff !important;
-  -webkit-transition: 0.1s linear;
-  transition: 0.1s linear;
-}
+
 </style>
