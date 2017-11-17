@@ -58,7 +58,9 @@
               jurisdiction: "开放浏览",
               exhibition: "1",
               time: "2017-04-14",
+              // 判断选中
               checked: false,
+              // 按钮显示是和否
               show:false
             },
             {
@@ -82,9 +84,9 @@
       },
       // 全选、全不选
       allChecked(bool) {
-        // if()
-        console.log(bool)
+        // 根据传入的值判断全选按钮的状态
         var array = this.tableData.tableContent;
+        // 若是为true，则需要变把元素都变成false。反之，则为true。
         if(bool===true){
           array.forEach(element => {
             element.checked = false;
@@ -97,6 +99,7 @@
       },
       // 是否的按钮
       isShow(tabcont) {
+        // 改变show的值。
         tabcont.show = ! tabcont.show;
       }
     },
@@ -113,10 +116,12 @@
             }
           }
         }
+        // 若是没有false则全为true，返回true。
         return {
           flag: true
         };
       },
+      // 计算show的值返回是否。
       showText(){
         var array = this.tableData.tableContent;
         for (let i = 0; i < array.length; i++) {
