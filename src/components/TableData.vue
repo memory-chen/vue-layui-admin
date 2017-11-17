@@ -104,6 +104,7 @@
       //计算是否全部的属性；
       AllcheckClick() {
         var array = this.tableData.tableContent;
+        // 根据元素checked的值判返回的数据值。
         for (let i = 0; i < array.length; i++) {
           const element = array[i];
           if (element.checked === false) {
