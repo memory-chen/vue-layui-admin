@@ -1,21 +1,35 @@
 <template>
-  <div id="contentTotalPerson">
-    <status-btn></status-btn>
+  <div id="article">
+    <status-btn @delInfo='delFn'></status-btn>
     <div class="layui-form news_list">
-      <table-data></table-data>
+      <table-data :btnStstus= 'status'></table-data>
     </div>
   </div>
 </template>
 
 <script>
-import StatusBtn from '@/components/StatusBtn'
-import TableData from '@/components/TableData'
-export default {
-  components:{
-    StatusBtn,
-    TableData
+  // 头部按钮
+  import StatusBtn from '@/components/StatusBtn'
+  // 列表数据
+  import TableData from '@/components/TableData'
+  export default {
+    data(){
+      return {
+        status:{
+          del:false
+        }
+      }
+    },
+    components: {
+      StatusBtn,
+      TableData
+    },
+    methods: {
+      delFn(data) {
+        this.status.del = data.isDel;
+      }
+    }
   }
-}
 </script>
 
 <style>
