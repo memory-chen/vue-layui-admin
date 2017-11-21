@@ -6,7 +6,6 @@
     </div>
   </div>
 </template>
-
 <script>
   // 头部按钮
   import StatusBtn from '@/components/StatusBtn'
